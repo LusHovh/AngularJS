@@ -1,0 +1,63 @@
+
+
+
+<head>
+	<style>
+    	.images 
+        {
+    	 	width : 500px;
+    	    height : auto;
+    	    margin-bottom: 10px;
+    	} 
+    	.img_cont 
+        {
+    	 	border : 1px solid #ddd;
+    	 	border-radius : 5px;
+    	 	padding : 10px;
+    	 	background-color : white;
+            margin-bottom: 30px;
+            height: 315px;
+    	}
+    	.title, .content 
+        {
+    	 	color : #777;
+    	}
+        .cols:hover 
+        {
+            padding-right: 3px;
+            padding-left: 3px;
+
+        }
+        .img_cont:hover 
+        {
+            background-color: #f1f1f1;
+        }
+	</style>
+</head>
+
+	<div class="container">
+		<div class="row row_cont" >
+           
+      			<div id='post' class="col-md-3 col-offset-1 cols postcontainer"  ng-repeat="post in posts">
+       				 <div class='img_cont'>
+             			 <a ui-sref="show({id : post.id})" href="#posts/{{post.id}}">{{post.title}}</a>
+        		         <p>{{post.content}}</p>
+        		         <div ng-if="post.image">
+						 <img class="img-responsive img-thumbnail images" ng-src="/images/{{post.image}}" style="width:500px; height: 200px">
+						 </div>
+             			
+                       
+                 			<!-- <a href="{{url('/posts/'.$post->id.'/edit')}}"><button class = "btn btn-sm btn-default">EDIT</button></a>
+                 			<form action='{{url('/posts/'.$post->id)}}' method='post' style='display: inline-block'>
+                                <input type='hidden' name='_method' value='DELETE'>
+                               
+                                <button  class = "btn btn-sm btn-default"  type='submit'>Delete Post</button> 
+                            </form>    -->                   
+                                             
+        			</div>
+      			</div>
+          
+		</div>
+	</div>
+
+
